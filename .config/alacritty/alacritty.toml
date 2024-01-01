@@ -1,0 +1,73 @@
+live_config_reload = true
+working_directory = "None"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x002b36"
+blue = "0x839496"
+cyan = "0x93a1a1"
+green = "0x586e75"
+magenta = "0x6c71c4"
+red = "0xcb4b16"
+white = "0xfdf6e3"
+yellow = "0x657b83"
+
+[colors.normal]
+black = "0x002b36"
+blue = "0x268bd2"
+cyan = "0x2aa198"
+green = "0x859900"
+magenta = "0xd33682"
+red = "0xdc322f"
+white = "0xeee8d5"
+yellow = "0xb58900"
+
+[colors.primary]
+background = "0x001217"
+foreground = "0x708183"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.glyph_offset]
+x = 0
+y = 2
+
+[font.normal]
+family = "MesloLGM Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 4
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+
+[window]
+decorations = "Buttonless"
+dynamic_padding = false
+opacity = 0.95
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 160
+lines = 40
+
+[window.padding]
+x = 10
+y = 3
+
+[window.position]
+x = 125
+y = 100
