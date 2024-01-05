@@ -121,4 +121,5 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "ThePrimeagen/vim-be-good" },
   { "folke/twilight.nvim" },
+  { "craigmac/nvim-supertab" }
 })
