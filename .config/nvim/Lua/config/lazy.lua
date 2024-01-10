@@ -118,6 +118,32 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
 			},
 		},
 	},
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = true,
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = { "BufReadPre", "BufNewFile" },
+    config = true,
+  },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "smjonas/inc-rename.nvim",
+    config = function ()
+      require("noice").setup {
+        presets = { inc_rename = true }
+      }
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "ThePrimeagen/vim-be-good" },
   { "folke/twilight.nvim" },
