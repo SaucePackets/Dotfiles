@@ -22,6 +22,7 @@ return {
         autotag = { enable = true },
         -- ensure these language parsers are installed
         ensure_installed = {
+          "markdown",
           "markdown_inline",
           "json",
           "javascript",

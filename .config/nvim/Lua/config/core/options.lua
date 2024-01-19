@@ -22,7 +22,7 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Add asterisks in block comments
-vim.opt.formatoptions:append { 'r' }
+opt.formatoptions:append { 'r' }
 
 -- Open new window
 opt.splitbelow = true
@@ -57,5 +57,5 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
--- Concealer for Neorg
-vim.o.conceallevel=2
+-- Concealer for Neorg and obsidian
+opt.conceallevel = 1

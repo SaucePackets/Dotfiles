@@ -19,12 +19,12 @@ return {
   opts = {
     workspaces = {
       {
-        name = "journal",
-        path = "/Users/jerrykingsbury/Library/Mobile Documents/iCloud~md~obsidian/Documents/Journal",
+        name = "Personal",
+        path = "/Users/jerrykingsbury/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal",
       },
       {
-        name = "school",
-        path = "/Users/jerrykingsbury/Library/Mobile Documents/iCloud~md~obsidian/Documents/School-Notes"
+        name = "School",
+        path = "/Users/jerrykingsbury/Library/Mobile Documents/iCloud~md~obsidian/Documents/School"
       },
     },
 
@@ -32,5 +32,9 @@ return {
     completion = {
       nvim_cmp = true,
     }
+  },
+  daily_notes = {
+    directory = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal/Daily/",
+    temmplate = nil,
   },
 }
