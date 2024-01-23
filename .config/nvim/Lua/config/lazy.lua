@@ -106,18 +106,18 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  {
-		"dinhhuy258/git.nvim",
-		event = "BufReadPre",
-		opts = {
-			keymaps = {
-				-- Open blame window
-				blame = "<Leader>gb",
-				-- Open file/folder in git repository
-				browse = "<Leader>go",
-			},
-		},
-	},
+ --  {
+	-- 	"dinhhuy258/git.nvim",
+	-- 	event = "BufReadPre",
+	-- 	opts = {
+	-- 		keymaps = {
+	-- 			-- Open blame window
+	-- 			blame = "<Leader>gb",
+	-- 			-- Open file/folder in git repository
+	-- 			browse = "<Leader>go",
+	-- 		},
+	-- 	},
+	-- },
   {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
@@ -142,10 +142,21 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
   },
   {
     "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "TodoTrouble", "TodoTelescope" },
+    config = true,
+    -- stylua: ignore
+    keys = {
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+      { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
+      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+    },
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "ThePrimeagen/vim-be-good" },
   { "folke/twilight.nvim" },
-  { "craigmac/nvim-supertab" }
+  { "craigmac/nvim-supertab" },
+  { "tpope/vim-fugitive" }
 })

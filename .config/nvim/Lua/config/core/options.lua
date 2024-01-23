@@ -58,4 +58,4 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- Concealer for Neorg and obsidian
-opt.conceallevel = 1
+opt.conceallevel = 2
