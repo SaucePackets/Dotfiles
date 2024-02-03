@@ -92,7 +92,7 @@ require("lazy").setup({
 		opts = {
 			window = {
 				backdrop = 0.95,
-				width = 120,
+				width = 80,
 				height = 1,
 				options = {
 					signcolumn = "no",
