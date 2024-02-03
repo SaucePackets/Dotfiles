@@ -1,23 +1,25 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugins.lsp" },
+require("lazy").setup({
+  { import = "config.plugins" },
+  { import = "config.plugins.lsp" },
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
-    dependencies = {{ "nvim-lua/plenary.nvim" }, { "laher/neorg-exec" }, { "nvim-neorg/neorg-telescope" }},
+    dependencies = { { "nvim-lua/plenary.nvim" }, { "laher/neorg-exec" }, { "nvim-neorg/neorg-telescope" } },
     config = function()
-      require("neorg").setup {
+      require("neorg").setup({
         load = {
           ["core.defaults"] = {}, -- Loads default behavior
           ["core.concealer"] = {}, -- Adds pretty icons to your documents
@@ -25,8 +27,8 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
           ["core.export"] = {},
           ["core.completion"] = {
             config = {
-              engine = "nvim-cmp"
-            }
+              engine = "nvim-cmp",
+            },
           },
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
@@ -36,7 +38,7 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
             },
           },
         },
-      }
+      })
     end,
   },
   {
@@ -76,52 +78,33 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
     },
   },
   {
-		"echasnovski/mini.animate",
-		event = "VeryLazy",
-		opts = function(_, opts)
-			opts.scroll = {
-				enable = false,
-			}
-		end,
-	},
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.scroll = {
+        enable = false,
+      }
+    end,
+  },
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-		opts = {
-			plugins = {
-				gitsigns = true,
-				tmux = true,
+    opts = {
+      plugins = {
+        gitsigns = true,
+        tmux = true,
         alacritty = { enabled = false, font = "+2" },
-			},
-		},
-		keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+      },
+    },
+    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
-	{
-    	"nvim-telescope/telescope-file-browser.nvim",
-    	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-	},
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
- --  {
-	-- 	"dinhhuy258/git.nvim",
-	-- 	event = "BufReadPre",
-	-- 	opts = {
-	-- 		keymaps = {
-	-- 			-- Open blame window
-	-- 			blame = "<Leader>gb",
-	-- 			-- Open file/folder in git repository
-	-- 			browse = "<Leader>go",
-	-- 		},
-	-- 	},
-	-- },
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = true,
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -134,11 +117,11 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
   },
   {
     "smjonas/inc-rename.nvim",
-    config = function ()
-      require("noice").setup {
-        presets = { inc_rename = true }
-      }
-    end
+    config = function()
+      require("noice").setup({
+        presets = { inc_rename = true },
+      })
+    end,
   },
   {
     "folke/todo-comments.nvim",
@@ -146,17 +129,17 @@ require("lazy").setup({ { import = "config.plugins" }, { import = "config.plugin
     config = true,
     -- stylua: ignore
     keys = {
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
-      { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
-      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
-      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
-      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+      { "]t",         function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+      { "[t",         function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+      { "<leader>xt", "<cmd>TodoTrouble<cr>",                              desc = "Todo (Trouble)" },
+      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>",      desc = "Todo/Fix/Fixme (Trouble)" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>",                            desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",    desc = "Todo/Fix/Fixme" },
     },
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{ "ThePrimeagen/vim-be-good" },
+  { "ThePrimeagen/vim-be-good" },
   { "folke/twilight.nvim" },
   { "craigmac/nvim-supertab" },
-  { "tpope/vim-fugitive" }
+  { "preservim/vim-pencil" },
 })
