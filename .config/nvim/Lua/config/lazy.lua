@@ -58,10 +58,6 @@ require("lazy").setup({
                         filter = { event = "notify", find = "No information available" },
                         opts = { skip = true },
                     },
-                    {
-                        view = "notify",
-                        filter = { event = "msg_showmode" },
-                    },
                 },
                 presets = {
                     lsp_doc_border = true,
@@ -69,6 +65,17 @@ require("lazy").setup({
                     command_palette = true,
                     long_message_to_split = true,
                     inc_rename = true,
+                },
+            })
+            require("lualine").setup({
+                sections = {
+                    lualine_x = {
+                        {
+                            require("noice").api.statusline.mode.get,
+                            cond = require("noice").api.statusline.mode.has,
+                            color = { fg = "#ff9e64" },
+                        }
+                    },
                 },
             })
         end,
