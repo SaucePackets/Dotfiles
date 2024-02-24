@@ -6,9 +6,13 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.black,
+				null_ls.builtins.formatting.gofmt,
+				null_ls.builtins.formatting.csharpier,
+				null_ls.builtins.formatting.xmlformat,
 				null_ls.builtins.diagnostics.eslint_d,
-        null_ls.builtins.hover.dictionary,
-        null_ls.builtins.completion.spell,
+				null_ls.builtins.hover.dictionary,
+				null_ls.builtins.completion.spell,
 			},
 		})
 
