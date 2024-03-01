@@ -9,7 +9,7 @@ opt["guicursor"] = ""
 opt.spelllang = "en_us"
 opt.spell = true
 opt.showcmd = true
-
+opt.fillchars = { eob = " " }
 opt.title = true
 opt.hlsearch = true
 opt.cmdheight = 1

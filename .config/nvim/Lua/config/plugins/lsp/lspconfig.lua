@@ -70,6 +70,16 @@ return {
             on_attach = on_attach,
         })
 
+        -- lspconfig["eslint"].setup({
+        --     --- ...
+        --     on_attach = function(client, bufnr)
+        --         vim.api.nvim_create_autocmd("BufWritePre", {
+        --             buffer = bufnr,
+        --             command = "EslintFixAll",
+        --         })
+        --     end,
+        -- })
+        --
         -- configure html server
         lspconfig["html"].setup({
             capabilities = capabilities,
@@ -135,6 +145,15 @@ return {
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+        })
+
+        lspconfig["jsonls"].setup({
+            settings = {
+                json = {
+                    schemas = require("schemastore").json.schemas(),
+                    validate = { enable = true },
+                },
+            },
         })
 
         local pid = vim.fn.getpid()

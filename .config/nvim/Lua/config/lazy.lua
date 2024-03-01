@@ -157,10 +157,15 @@ require("lazy").setup({
             { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",    desc = "Todo/Fix/Fixme" },
         },
     },
+    {
+        "b0o/SchemaStore.nvim",
+        lazy = true,
+    },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     { "ThePrimeagen/vim-be-good" },
     { "folke/twilight.nvim" },
     { "craigmac/nvim-supertab" },
     { "Hoffs/omnisharp-extended-lsp.nvim", lazy = true },
     { "preservim/vim-pencil" },
+    { "tpope/vim-dadbod" },
 })

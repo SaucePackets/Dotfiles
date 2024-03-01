@@ -25,6 +25,8 @@ return {
                     "markdown",
                     "markdown_inline",
                     "json",
+                    "json5",
+                    "jsonc",
                     "javascript",
                     "typescript",
                     "tsx",

@@ -27,7 +27,7 @@ return {
 					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
-						symbols = { error = " ", warn = " ", info = " ", hint = " ", copilot = "" },
+						symbols = { error = " ", warn = " ", info = " ", hint = " ", copilot = " " },
 					},
 					{ "encoding" },
 					{ "filetype" },
