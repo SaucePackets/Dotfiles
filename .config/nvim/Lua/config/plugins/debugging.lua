@@ -5,15 +5,12 @@ return {
         {
             "rcarriga/nvim-dap-ui",
             config = function(_, opts)
-                -- setup dap config by VsCode launch.json file
-                -- require("dap.ext.vscode").load_launchjs()
                 local dap = require("dap")
                 local dapui = require("dapui")
 
                 require("dap-go").setup()
+                require('netcoredbg-macOS-arm64').setup(require('dap'))
 
-                -- Dotnet dap adapter
-                -- TODO: Work on trying to get this to work
                 dap.adapters.coreclr = {
                     type = "executable",
                     command = "$HOME/.local/share/netcoredbg/netcoredbg",

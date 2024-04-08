@@ -6,9 +6,6 @@ local keymap = vim.keymap -- for conciseness
 
 ----------------------- General Keymaps -------------------
 
--- twilight
-vim.api.nvim_set_keymap("n", "tw", ":Twilight<enter>", { noremap = false })
-
 -- Clear search highlighting
 keymap.set("n", "<leader>c", "<cmd>nohl<CR>", { desc = "Clear search highlighting" })
 
