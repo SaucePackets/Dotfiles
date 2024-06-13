@@ -110,37 +110,46 @@ require("lazy").setup({
 	},
 	{
 		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = { "TodoTrouble", "TodoTelescope" },
 		config = true,
-        -- stylua: ignore
-        keys = {
-            { "]t",         function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
-            { "[t",         function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
-            { "<leader>xt", "<cmd>TodoTrouble<cr>",                              desc = "Todo (Trouble)" },
-            { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>",      desc = "Todo/Fix/Fixme (Trouble)" },
-            { "<leader>st", "<cmd>TodoTelescope<cr>",                            desc = "Todo" },
-            { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",    desc = "Todo/Fix/Fixme" },
-        },
-	},
-	{
-		"nvim-neotest/neotest",
-		dependencies = {
-			"nvim-neotest/nvim-nio",
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			"nvim-treesitter/nvim-treesitter",
+		keys = {
+			{
+				"]t",
+				function()
+					require("todo-comments").jump_next()
+				end,
+				desc = "Next todo comment",
+			},
+			{
+				"[t",
+				function()
+					require("todo-comments").jump_prev()
+				end,
+				desc = "Previous todo comment",
+			},
+			{ "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
+			{ "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
+			{ "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+			{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 		},
 	},
-    -- NOTE: Need to figure out how to properly setup dap for debugging dotnet applications
-    -- This plugin may be useful for that and would need to see how to use this plugin with it.
+	-- {
+	-- 	"nvim-neotest/neotest",
+	-- 	dependencies = {
+	-- 		"nvim-neotest/nvim-nio",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"antoinemadec/FixCursorHold.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- },
+	-- NOTE: Need to figure out how to properly setup dap for debugging dotnet applications
+	-- This plugin may be useful for that and would need to see how to use this plugin with it.
 	-- { "Cliffback/netcoredbg-macOS-arm64.nvim", dependencies = { "mfussenegger/nvim-dap" } },
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 	{ "b0o/SchemaStore.nvim", lazy = true },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{ "ThePrimeagen/vim-be-good" },
-	{ "folke/twilight.nvim" },
 	{ "craigmac/nvim-supertab" },
 	{ "Hoffs/omnisharp-extended-lsp.nvim", lazy = true },
 	{ "preservim/vim-pencil" },
-	{ "tpope/vim-dadbod" },
 })
