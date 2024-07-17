@@ -1,5 +1,3 @@
--- plugins/telescope.lua:
-
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -48,9 +46,7 @@ return {
 						theme = "dropdown",
 						hijack_netrw = true,
 						mappings = {
-							-- your custom insert mode mappings
 							["n"] = {
-								-- your custom normal mode mappings
 								["N"] = fb_actions.create,
 								["h"] = fb_actions.goto_parent_dir,
 								["/"] = function()
@@ -73,7 +69,7 @@ return {
 					},
 				},
 			})
-			-- set keymaps
+			-- keymaps
 			local keymap = vim.keymap -- for conciseness
 
 			require("telescope").load_extension("file_browser")

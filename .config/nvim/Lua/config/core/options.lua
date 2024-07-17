@@ -29,7 +29,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs 
+opt.tabstop = 2 -- 2 spaces for tabs
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.autoindent = true -- auto indent
 opt.expandtab = true
@@ -58,3 +58,9 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 -- Concealer for Neorg and obsidian
 opt.conceallevel = 2
+
+-- Set fold method to 'indent'
+opt.foldmethod = "indent"
+
+-- Set initial fold level to 99 (open all folds by default)
+opt.foldlevelstart = 99

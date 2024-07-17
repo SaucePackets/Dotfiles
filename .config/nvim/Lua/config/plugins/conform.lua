@@ -20,13 +20,21 @@ return {
 			python = { "isort", "black" },
 			javascript = { "prettier" },
 			javascriptreact = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
 			markdown = { "prettier" },
 			json = { "jq" },
 			sh = { "shfmt" },
-			c_sharp = { "csharpier" },
-      sql = { "sqlformat" },
+			cs = { "csharpier" },
+			sql = { "sqlformat" },
+			html = { "prettier" },
+			css = { "prettier" },
 		},
 		formatters = {
+			csharpier = {
+				command = "dotnet-csharpier",
+				args = { "--write-stdout" },
+			},
 			shfmt = {
 				prepend_args = { "-i", "2" },
 			},

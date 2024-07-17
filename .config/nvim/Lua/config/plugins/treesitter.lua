@@ -4,7 +4,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
 			"windwp/nvim-ts-autotag",
 		},
 		config = function()
@@ -44,14 +43,18 @@ return {
 					"yaml",
 					"swift",
 					"sql",
+					"dockerfile",
+				},
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "<C-space>",
+						node_incremental = "<C-space>",
+						scope_incremental = false,
+						node_decremental = "<bs>",
+					},
 				},
 				ignore_install = { "org" },
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				-- context_commentstring = {
-				--   enable = true,
-				--   enable_autocmd = false,
-				-- },
-				-- auto install above language parsers
 				auto_install = true,
 			})
 		end,

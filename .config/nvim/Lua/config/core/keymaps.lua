@@ -7,7 +7,7 @@ local keymap = vim.keymap -- for conciseness
 ----------------------- General Keymaps -------------------
 
 -- Clear search highlighting
-keymap.set("n", "<leader>c", "<cmd>nohl<CR>", { desc = "Clear search highlighting" })
+keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlighting" })
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

@@ -17,11 +17,14 @@ return {
 				lualine_b = { "branch" },
 				lualine_c = {
 					{ "filename" },
-                    -- stylua: ignore
-                    {
-                        function() return require("nvim-navic").get_location() end,
-                        cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-                    },
+					{
+						function()
+							return require("nvim-navic").get_location()
+						end,
+						cond = function()
+							return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+						end,
+					},
 				},
 				lualine_x = {
 					{
@@ -36,11 +39,6 @@ return {
 				lualine_y = {
 					{ "progress" },
 					{ "location" },
-				},
-				lualine_z = {
-					-- function()
-					--   return " " .. os.date("%R")
-					-- end,
 				},
 			},
 			extensions = { "fugitive", "neo-tree", "lazy" },

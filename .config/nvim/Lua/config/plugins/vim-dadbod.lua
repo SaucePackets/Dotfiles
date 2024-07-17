@@ -39,8 +39,11 @@ return {
 			"DBUIFindBuffer",
 		},
 		init = function()
-			-- Your DBUI configuration
+			-- Add database here-- 
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
+		keys = {
+			{ "<leader>d", "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
+		},
 	},
 }

@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- NOTE: Possible adds: neotest, dap
+--
 require("lazy").setup({
 	{ import = "config.plugins" },
 	{ import = "config.plugins.lsp" },
@@ -56,15 +58,6 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			{ "rcarriga/nvim-notify", opts = { timeout = 1000 } },
 		},
-	},
-	{
-		"echasnovski/mini.animate",
-		event = "VeryLazy",
-		opts = function(_, opts)
-			opts.scroll = {
-				enable = false,
-			}
-		end,
 	},
 	{
 		"folke/zen-mode.nvim",
@@ -134,18 +127,6 @@ require("lazy").setup({
 			{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 		},
 	},
-	-- {
-	-- 	"nvim-neotest/neotest",
-	-- 	dependencies = {
-	-- 		"nvim-neotest/nvim-nio",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"antoinemadec/FixCursorHold.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- },
-	-- NOTE: Need to figure out how to properly setup dap for debugging dotnet applications
-	-- This plugin may be useful for that and would need to see how to use this plugin with it.
-	-- { "Cliffback/netcoredbg-macOS-arm64.nvim", dependencies = { "mfussenegger/nvim-dap" } },
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 	{ "b0o/SchemaStore.nvim", lazy = true },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },

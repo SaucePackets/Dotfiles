@@ -4,6 +4,6 @@ return {
 	priority = 1000,
 	opts = { transparent = true },
 	config = function()
-		vim.cmd([[ colorscheme solarized-osaka ]])
+		vim.cmd([[ colorscheme solarized-osaka-night ]])
 	end,
 }
