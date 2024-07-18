@@ -79,6 +79,7 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+
 			-- configure svelte server
 			["svelte"] = function()
 				lspconfig["svelte"].setup({
@@ -118,6 +119,16 @@ return {
 					},
 				})
 			end,
+
+			["pyright"] = function()
+				lspconfig["pyright"].setup({
+					capabilities = capabilities,
+					filetypes = {
+						"py",
+					},
+				})
+			end,
+
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
 					capabilities = capabilities,
