@@ -9,6 +9,7 @@ return {
 			"rafamadriz/friendly-snippets", -- collection of snippets
 			"saadparwaiz1/cmp_luasnip", -- for autocompletion
 			"onsails/lspkind.nvim", -- vs-code like pictograms
+			"kristijanhusak/vim-dadbod-completion", -- dad bod completion snippets
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -45,12 +46,19 @@ return {
 				-- configure lspkind for vs-code like pictograms in completion menu
 				formatting = {
 					format = lspkind.cmp_format({
-            -- Uncomment if you want to only show symbols
+						-- Uncomment if you want to only show symbols
 						-- mode = "symbol",
 						maxwidth = 50,
 						ellipsis_char = "...",
 						symbol_map = { Copilot = "" },
 					}),
+				},
+			})
+			-- setup vim-dadbod
+			cmp.setup.filetype({ "sql" }, {
+				sources = {
+					{ name = "vim-dadbod-completion" },
+					{ name = "buffer" },
 				},
 			})
 		end,
