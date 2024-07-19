@@ -133,5 +133,5 @@ require("lazy").setup({
 	{ "craigmac/nvim-supertab" },
 	{ "Hoffs/omnisharp-extended-lsp.nvim", lazy = true },
 	{ "preservim/vim-pencil" },
-  { "tpope/vim-dotenv" },
+	{ "tpope/vim-dotenv" },
 })

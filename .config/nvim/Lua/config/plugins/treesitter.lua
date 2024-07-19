@@ -38,7 +38,6 @@ return {
 					"cpp",
 					"c",
 					"python",
-					"latex",
 					"xml",
 					"yaml",
 					"swift",
