@@ -49,7 +49,7 @@ config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
 	"MesloLGM Nerd Font Mono",
 })
-config.font_size = 14
+config.font_size = 15
 
 -- Window
 
@@ -58,8 +58,8 @@ config.window_decorations = "RESIZE"
 config.macos_window_background_blur = 30
 config.window_background_opacity = 1
 
-config.initial_rows = 41
-config.initial_cols = 145
+config.initial_rows = 40
+config.initial_cols = 140
 
 config.window_padding = {
 	left = 10,

@@ -13,20 +13,25 @@ $character"""
 add_newline = false
 
 [directory]
+# Using the color 'blue' from Solarized Osaka theme
 style = "blue"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+# Defining the success, error, and vimcmd symbols with Solarized Osaka colors
+# success_symbol = "[❯](#47adf5)" # bright blue
+success_symbol = "[❯](purple)" #  purple
+error_symbol = "[❯](#dc312e)"   # red
+vimcmd_symbol = "[❮](#b7fa00)"  # bright green
 
 [git_branch]
+# Using bright black from Solarized Osaka theme
 format = "[$branch]($style)"
-# style = "bright-black"
+style = "#fdf6e2"
 
 [git_status]
+# Using cyan from Solarized Osaka theme
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
+style = "#2aa298"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -36,14 +41,16 @@ deleted = "​"
 stashed = "≡"
 
 [git_state]
+# Using bright black from Solarized Osaka theme
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-# style = "bright-black"
+style = "#fdf6e2"
 
 [cmd_duration]
+# Using yellow from Solarized Osaka theme
 format = "[$duration]($style) "
-style = "yellow"
+style = "#b38600"
 
 [python]
+# Using bright black from Solarized Osaka theme
 format = "[$virtualenv]($style) "
-# style = "bright-black"
-
+style = "#fdf6e2"

@@ -131,7 +131,6 @@ require("lazy").setup({
 	{ "b0o/SchemaStore.nvim", lazy = true },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "craigmac/nvim-supertab" },
-	{ "Hoffs/omnisharp-extended-lsp.nvim", lazy = true },
 	{ "preservim/vim-pencil" },
 	{ "tpope/vim-dotenv" },
 })
