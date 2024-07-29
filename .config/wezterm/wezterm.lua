@@ -47,19 +47,18 @@ config.colors = {
 
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
-	"MesloLGM Nerd Font Mono",
 })
-config.font_size = 15
+config.font_size = 16
 
 -- Window
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.macos_window_background_blur = 30
-config.window_background_opacity = 1
+config.macos_window_background_blur = 10
+config.window_background_opacity = .98
 
-config.initial_rows = 40
-config.initial_cols = 140
+config.initial_rows = 35
+config.initial_cols = 135
 
 config.window_padding = {
 	left = 10,

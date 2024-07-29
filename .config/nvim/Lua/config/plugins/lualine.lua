@@ -3,11 +3,9 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local lualine = require("lualine")
-
-		-- configure lualine with modified theme
-		lualine.setup({
+		require("lualine").setup({
 			options = {
+				icons_enbaled = true,
 				theme = "solarized_dark",
 				globalstatus = true,
 				disabled_filetypes = { statusline = { "alpha" } },
@@ -15,17 +13,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch" },
-				lualine_c = {
-					{ "filename" },
-					{
-						function()
-							return require("nvim-navic").get_location()
-						end,
-						cond = function()
-							return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-						end,
-					},
-				},
+				lualine_c = { "filename" },
 				lualine_x = {
 					{
 						"diagnostics",
@@ -36,12 +24,10 @@ return {
 					{ "filetype" },
 					{ "diff" },
 				},
-				lualine_y = {
-					{ "progress" },
-					{ "location" },
-				},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
 			},
-			extensions = { "fugitive", "neo-tree", "lazy" },
+			extensions = { "fugitive", "lazy" },
 		})
 	end,
 }

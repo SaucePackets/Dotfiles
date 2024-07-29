@@ -26,7 +26,6 @@ return {
 			json = { "jq" },
 			sh = { "shfmt" },
 			cs = { "csharpier" },
-			sql = { "sqlformat" },
 			html = { "prettier" },
 			css = { "prettier" },
 		},

@@ -36,7 +36,7 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
-					{ name = "copilot" },
+					-- { name = "copilot" },
 				}, {
 					{ name = "buffer" },
 				}),
@@ -45,7 +45,7 @@ return {
 						maxwidth = 50,
 						ellipsis_char = "...",
 						show_labelDetails = true,
-						symbol_map = { Copilot = "" },
+						-- symbol_map = { Copilot = "" },
 					}),
 				},
 			})

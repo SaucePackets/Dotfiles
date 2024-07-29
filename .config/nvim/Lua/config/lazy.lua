@@ -60,27 +60,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"folke/zen-mode.nvim",
-		cmd = "ZenMode",
-		window = {
-			options = {
-				signcolumn = "no",
-				number = false,
-			},
-		},
-		plugins = {
-			options = {
-				enabled = true,
-				ruler = false,
-				laststatus = 0,
-			},
-			twilight = { enabled = true },
-			gitsigns = { enabled = false },
-			tmux = { enabled = true },
-			alacritty = { enabled = true, font = "14" },
-		},
-	},
-	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },

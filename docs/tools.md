@@ -1,14 +1,21 @@
-# Command line tools
+# Tools
+
+## Commnad line
 * homebrew
-* pipx
-* virtualenv
-* Nerdfont
+* pip
+* JetBrains Mono
 * qemu (If running a vm)
 * tmux
 * neovim
 * github cli
 * node
-* nvm
-* alacritty
+* wezterm (includes nerd font icons)
 * starship
 * fzf
+
+## Using Docker
+* docker
+* docker-compose
+* docker-credential-helper
+* colima
+* lazydocker
