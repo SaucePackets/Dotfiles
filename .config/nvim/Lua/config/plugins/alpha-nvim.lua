@@ -7,17 +7,19 @@ return {
 	opts = function()
 		local dashboard = require("alpha.themes.dashboard")
 
-		-- Set header
-		dashboard.section.header.val = {
-			"                                                    ",
-			" ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-			" ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-			" ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-			" ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-			" ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-			" ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-			"                                                    ",
-		}
+		local logo = [[
+                                              
+       ████ ██████           █████      ██
+      ███████████             █████ 
+      █████████ ███████████████████ ███   ███████████
+     █████████  ███    █████████████ █████ ██████████████
+    █████████ ██████████ █████████ █████ █████ ████ █████
+  ███████████ ███    ███ █████████ █████ █████ ████ █████
+ ██████  █████████████████████ ████ █████ █████ ████ ██████
+
+      ]]
+
+		dashboard.section.header.val = vim.split(logo, "\n")
 
 		-- Set menu
 		dashboard.section.buttons.val = {
@@ -37,7 +39,7 @@ return {
 		dashboard.section.header.opts.hl = "AlphaHeader"
 		dashboard.section.buttons.opts.hl = "AlphaButtons"
 		dashboard.section.footer.opts.hl = "AlphaFooter"
-		dashboard.opts.layout[1].val = 8
+		dashboard.opts.layout[1].val = 5
 		return dashboard
 	end,
 	config = function(_, dashboard)

@@ -54,8 +54,8 @@ config.font_size = 16
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.macos_window_background_blur = 10
-config.window_background_opacity = .98
+config.macos_window_background_blur = 17
+config.window_background_opacity = .95
 
 config.initial_rows = 35
 config.initial_cols = 135
