@@ -1,4 +1,4 @@
--- if true then return {} end
+if true then return {} end
 
 return {
 	"goolord/alpha-nvim",
@@ -39,7 +39,7 @@ return {
 		dashboard.section.header.opts.hl = "AlphaHeader"
 		dashboard.section.buttons.opts.hl = "AlphaButtons"
 		dashboard.section.footer.opts.hl = "AlphaFooter"
-		dashboard.opts.layout[1].val = 5
+		dashboard.opts.layout[1].val = 4
 		return dashboard
 	end,
 	config = function(_, dashboard)
