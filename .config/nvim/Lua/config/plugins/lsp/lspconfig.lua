@@ -3,6 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			{ "williamboman/mason-lspconfig.nvim", opts = { auto_install = true } },
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		config = function()
 			require("mason").setup({
@@ -14,6 +15,33 @@ return {
 					},
 				},
 			})
+
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "tsserver",
+          "pyright",
+          "emmet_ls",
+          "lua_ls",
+          "html",
+          "cssls",
+          "tailwindcss",
+        }
+      })
+
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          "prettier",
+          "isort",
+          "black",
+          "stylua",
+          "csharpier",
+          "jq",
+          "shfmt",
+          "eslint_d",
+          "pylint",
+          "sqlfluff",
+        }
+      })
 		end,
 	},
 	{
@@ -114,6 +142,13 @@ return {
 						},
 					})
 				end,
+        ["emmet_ls"] = function()
+          -- configure emmet language server
+          lspconfig["emmet_ls"].setup({
+            capabilities = capabilities,
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          })
+        end,
 				["omnisharp"] = function()
 					lspconfig.omnisharp.setup({
 						capabilities = capabilities,

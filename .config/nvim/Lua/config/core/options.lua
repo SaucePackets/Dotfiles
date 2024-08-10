@@ -6,7 +6,7 @@ vim.wo.relativenumber = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.number = true
-opt["guicursor"] = ""
+-- opt["guicursor"] = ""
 
 opt.spelllang = "en_us"
 opt.spell = true

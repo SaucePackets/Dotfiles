@@ -1,39 +1,37 @@
-set -o vi
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-# ~/.zshrc
-eval "$(starship init zsh)"
-
 export TERM="xterm-256color"
 
-# Sort by modification time
-alias left='ls -t -1'
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-# Count files
-alias count='find . -type f | wc -l'
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Create a Python virtual environment
-alias ve='python3 -m venv ./venv'
-alias va='source ./venv/bin/activate'
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# Add a copy progress bar
-alias cpv='rsync -ah --info=progress2'
+# Source load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Simplify your Git workflow
-alias startgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
-alias cg='cd `git rev-parse --show-toplevel`'
+# Add zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
 
-# Change directories and view the contents at the same time
-function cl() {
-    DIR="$*";
-	# if no DIR given, go home
-	if [ $# -lt 1 ]; then 
-		DIR=$HOME;
-    fi;
-    builtin cd "${DIR}" && \
-    # use your preferred ls command
-	ls -F --color=auto
-}
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -U compinit && compinit
+
+eval "$(starship init zsh)"
+
+alias softwareEngineeringVault="cd /Users/jerrykingsbury/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/SoftwareEngineering"
+
+source <(fzf --zsh)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
