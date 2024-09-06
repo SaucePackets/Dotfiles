@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			{ "williamboman/mason-lspconfig.nvim", opts = { auto_install = true } },
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		config = function()
 			require("mason").setup({
@@ -16,38 +16,37 @@ return {
 				},
 			})
 
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "tsserver",
-          "pyright",
-          "emmet_ls",
-          "lua_ls",
-          "html",
-          "cssls",
-          "tailwindcss",
-        }
-      })
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"tsserver",
+					"pyright",
+					"emmet_ls",
+					"lua_ls",
+					"html",
+					"cssls",
+					"tailwindcss",
+				},
+			})
 
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "prettier",
-          "isort",
-          "black",
-          "stylua",
-          "csharpier",
-          "jq",
-          "shfmt",
-          "eslint_d",
-          "pylint",
-          "sqlfluff",
-        }
-      })
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"prettier",
+					"isort",
+					"black",
+					"stylua",
+					"csharpier",
+					"jq",
+					"shfmt",
+					"eslint_d",
+					"pylint",
+					"sqlfluff",
+				},
+			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { { "folke/neodev.nvim", opts = {} } },
 
 		config = function()
 			local lspconfig = require("lspconfig")
@@ -95,7 +94,12 @@ return {
 						{ silent = true, buffer = ev.buffer }
 					)
 
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { silent = true, buffer = ev.buffer })
+					vim.keymap.set(
+						{ "n", "v" },
+						"<leader>ca",
+						vim.lsp.buf.code_action,
+						{ silent = true, buffer = ev.buffer }
+					)
 
 					-- Smart rename
 					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { silent = true, buffer = ev.buffer })
@@ -121,7 +125,7 @@ return {
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Default handler to automatically install servers
+			-- Default handler to automatically install servers
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					lspconfig[server_name].setup({
@@ -129,7 +133,7 @@ return {
 					})
 				end,
 
-        -- Manually declare servers down here if need to
+				-- Manually declare servers down here if need to
 				["lua_ls"] = function()
 					lspconfig.lua_ls.setup({
 						capabilities = capabilities,
@@ -142,13 +146,22 @@ return {
 						},
 					})
 				end,
-        ["emmet_ls"] = function()
-          -- configure emmet language server
-          lspconfig["emmet_ls"].setup({
-            capabilities = capabilities,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-          })
-        end,
+				["emmet_ls"] = function()
+					-- configure emmet language server
+					lspconfig["emmet_ls"].setup({
+						capabilities = capabilities,
+						filetypes = {
+							"html",
+							"typescriptreact",
+							"javascriptreact",
+							"css",
+							"sass",
+							"scss",
+							"less",
+							"svelte",
+						},
+					})
+				end,
 				["omnisharp"] = function()
 					lspconfig.omnisharp.setup({
 						capabilities = capabilities,
@@ -167,6 +180,31 @@ return {
 						organize_imports_on_format = true,
 						enable_import_completion = true,
 						enable_decompilation_support = true,
+					})
+				end,
+				["gopls"] = function()
+					lspconfig.gopls.setup({
+						capabilities = capabilities,
+						settings = {
+							gopls = {
+								gofumpt = true,
+								analyses = {
+									unusedparams = true,
+									nilness = true,
+								},
+								codelenses = {
+									generate = true,
+									test = true,
+								},
+								hints = {
+									assignVariableTypes = true,
+									parameterNames = true,
+								},
+								completeUnimported = true,
+								directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+								semanticTokens = true,
+							},
+						},
 					})
 				end,
 			})

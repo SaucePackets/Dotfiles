@@ -43,6 +43,10 @@ return {
 					"swift",
 					"sql",
 					"dockerfile",
+					"go",
+					"gomod",
+					"gowork",
+					"gosum",
 				},
 				incremental_selection = {
 					enable = true,

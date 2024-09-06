@@ -1,3 +1,4 @@
+if true then return {} end
 return {
 	"ThePrimeagen/harpoon",
 	dependencies = {
@@ -7,12 +8,6 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set(
-			"n",
-			"<leader>ha",
-			"<cmd>lua require('harpoon.mark').add_file()<cr>",
-			{ desc = "Add file to harpoon" }
-		)
 		keymap.set(
 			"n",
 			"<leader>hr",

@@ -28,6 +28,7 @@ return {
 			cs = { "csharpier" },
 			html = { "prettier" },
 			css = { "prettier" },
+			go = { "goimports", "gofumpt" },
 		},
 		formatters = {
 			csharpier = {
