@@ -18,7 +18,7 @@ return {
 
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"tsserver",
+					"ts_ls",
 					"pyright",
 					"emmet_ls",
 					"lua_ls",
