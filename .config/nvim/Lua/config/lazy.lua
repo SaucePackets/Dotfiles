@@ -82,4 +82,5 @@ require("lazy").setup({
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "preservim/vim-pencil" },
 	{ "tpope/vim-dotenv" },
+	{ "mbbill/undotree" },
 })

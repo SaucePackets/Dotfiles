@@ -6,6 +6,9 @@ local keymap = vim.keymap -- for conciseness
 
 ----------------------- General Keymaps -------------------
 
+-- Toggle Undo tree
+keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undo Tree" })
+
 -- Clear search highlighting
 keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlighting" })
 
