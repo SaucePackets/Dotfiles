@@ -1,12 +1,10 @@
-
 return {
   "telescope.nvim",
   dependencies = {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       -- build = "make",
-      enabled = false
-
+      enabled = false,
     },
     "nvim-telescope/telescope-file-browser.nvim",
   },
@@ -19,8 +17,7 @@ return {
           additional_args = { "--hidden" },
         })
       end,
-      desc =
-      "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+      desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
     },
     {
       "\\\\",
@@ -75,7 +72,7 @@ return {
       mappings = {
         i = {
           ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-          ["<C-j>"] = actions.move_selection_next,     -- move to next result
+          ["<C-j>"] = actions.move_selection_next, -- move to next result
           ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         },
       },

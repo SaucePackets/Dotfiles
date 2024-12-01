@@ -11,16 +11,4 @@ return {
       },
     },
   },
-  -- {
-  --   "nvimdev/dashboard-nvim",
-  --   enabled = false,
-  -- },
-  {
-    "folke/which-key.nvim",
-    enabled = true,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-  },
 }
