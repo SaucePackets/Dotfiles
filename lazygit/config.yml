@@ -1,0 +1,5 @@
+git:
+  # if true, periodically fetch from remote
+  autoFetch: false
+os:
+  editPreset: 'nvim'
