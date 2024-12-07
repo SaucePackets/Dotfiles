@@ -102,7 +102,7 @@ return {
 					)
 
 					-- Smart rename
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { silent = true, buffer = ev.buffer })
+					-- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { silent = true, buffer = ev.buffer })
 
 					-- Show buffer diagnostics for file
 					vim.keymap.set(
