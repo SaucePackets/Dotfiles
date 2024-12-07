@@ -6,7 +6,8 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enbaled = true,
-				theme = "rose-pine",
+				-- theme = "rose-pine",
+        theme = "catppuccin",
 				globalstatus = true,
 				disabled_filetypes = { statusline = { "alpha" } },
 			},

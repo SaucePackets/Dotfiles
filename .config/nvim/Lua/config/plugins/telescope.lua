@@ -90,6 +90,6 @@ return {
 				initial_mode = "normal",
 				layout_config = { height = 40 },
 			})
-		end)
+		end, { desc = "Telescope Browser" })
 	end,
 }

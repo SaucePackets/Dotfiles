@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 local keymap = vim.keymap -- for conciseness
+-- local neogit = require('neogit')
 
 ----------------------- General Keymaps -------------------
 
@@ -30,3 +31,17 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current split" }
 -- Tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+
+-- Resize window
+keymap.set("n", "C-w<left>", "<C-w><")
+keymap.set("n", "C-w<right>", "<C-w>>")
+keymap.set("n", "C-w<up>", "<C-w>+")
+keymap.set("n", "C-w<down>", "<C-w>-")
+
+-- Git
+keymap.set("n", "<leader>go", ":Neogit<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gc", ":Neogit commit<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gp", ":Neogit pull<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gP", ":Neogit push<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gB", ":G blame<CR>", { silent = true, noremap = true })

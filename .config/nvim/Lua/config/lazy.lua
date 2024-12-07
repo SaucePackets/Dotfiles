@@ -11,8 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Possible adds: neotest, dap
---
 require("lazy").setup({
 	{ import = "config.plugins" },
 	{ import = "config.plugins.lsp" },

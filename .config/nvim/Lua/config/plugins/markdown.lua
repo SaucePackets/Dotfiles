@@ -30,7 +30,7 @@ return {
 					},
 					{
 						name = "Software Engineering Notes",
-						path = "/Users/jerrykingsbury/Library/Mobile Documents/iCloud~md~obsidian/Documents/SoftwareEngineering",
+						path = "/Users/jerrykingsbury/Software Engineering Notes",
 					},
 				},
 				daily_notes = {

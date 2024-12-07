@@ -125,6 +125,11 @@ return {
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+			local ok, mason_registry = pcall(require, "mason-registry")
+			if not ok then
+				vim.notify("mason-registry could not be loaded")
+				return
+			end
 			-- Default handler to automatically install servers
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
@@ -162,6 +167,30 @@ return {
 						},
 					})
 				end,
+				-- TODO: Setup Angular LSP
+				-- ["angular-language-server"] = function()
+				-- 	local angularls_path = mason_registry.get_package("angular-language-server"):get_install_path()
+				-- 	local cmd = {
+				-- 		"ngserver",
+				-- 		"--stdio",
+				-- 		table.concat({
+				-- 			angularls_path,
+				-- 			vim.uv.cwd(),
+				-- 		}, ","),
+				-- 		"--ngProbeLocations",
+				-- 		table.concat({
+				-- 			angularls_path .. "/node_modules/@angular/language-server",
+				-- 			vim.uv.cwd(),
+				-- 		}, ","),
+				-- 	}
+				-- 	lspconfig.angularls.setup({
+				-- 		capabilities = capabilities,
+				-- 		on_new_config = function(new_config, new_root_dir)
+				-- 			new_config.cmd = cmd
+				-- 		end,
+				-- 		-- root_dir = require("lspconfig").util.root_pattern("angular.json", ".git"),
+				-- 	})
+				-- end,
 				["omnisharp"] = function()
 					lspconfig.omnisharp.setup({
 						capabilities = capabilities,
