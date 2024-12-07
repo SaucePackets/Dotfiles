@@ -78,7 +78,5 @@ require("lazy").setup({
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 	{ "b0o/SchemaStore.nvim", lazy = true },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{ "preservim/vim-pencil" },
-	{ "tpope/vim-dotenv" },
 	{ "mbbill/undotree" },
 })
