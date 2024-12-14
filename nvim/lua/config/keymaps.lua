@@ -9,7 +9,7 @@ local neogit = require("neogit")
 ----------------------- General Keymaps -------------------
 
 -- Toggle Undo tree
-keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undo Tree" })
+keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle, { desc = "Toggle Undo Tree" })
 
 -- Tmux Navigator Keymaps
 -- vim.cmd([[
