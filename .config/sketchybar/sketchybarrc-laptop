@@ -131,6 +131,16 @@ sketchybar --add item weather right \
     script="$PLUGIN_SHARED_DIR/weather.sh" \
     --subscribe weather system_woke
 
+# sketchybar --add item weather.moon right \
+#     --set weather.moon \
+#     background.color=0x667dc4e4 \
+#     background.padding_right=-1 \
+#     icon.color=0xff181926 \
+#     icon.font="$FONT_FACE:Bold:22.0" \
+#     icon.padding_left=4 \
+#     icon.padding_right=3 \
+#     label.drawing=off \
+#     --subscribe weather.moon mouse.clicked
 
 ##### Finalizing Setup #####
 sketchybar --update
