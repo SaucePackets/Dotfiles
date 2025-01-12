@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Colors taken from tokyonight theme
+sapphire="0xff74c7ec"
+red="0xfff7768e"
+neutral="0xff313244"
+
+options=(
+	active_color="$sapphire"
+	inactive_color="$neutral"
+	hidpi=on
+	style=round
+	width=6.0
+)
+
+borders "${options[@]}"
