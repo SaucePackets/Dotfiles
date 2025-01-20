@@ -7,6 +7,9 @@ local opt = vim.opt -- for conciseness
 -- General Settings
 vim.wo.relativenumber = true
 
+-- Enable Telescope
+vim.g.lazyvim_picker = "telescope"
+
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.number = true
