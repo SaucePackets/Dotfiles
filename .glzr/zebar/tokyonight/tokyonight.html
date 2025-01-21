@@ -202,13 +202,6 @@
                 </div>
               )}
 
-              {output.weather && (
-                <div className="weather">
-                  {getWeatherIcon(output.weather)}
-                  {Math.round(output.weather.celsiusTemp)}°C
-                </div>
-              )}
-
               {output.network && (
                 <div className="network">{getNetworkIcon(output.network)}</div>
               )}
@@ -225,8 +218,15 @@
               )}
               {output.memory && (
                 <div className="memory">
-                  <i className="nf nf-fae-chip"></i>
+                  <i className="nf nf-fa-save"></i>
                   {Math.round(output.memory.usage)}%
+                </div>
+              )}
+
+              {output.weather && (
+                <div className="weather">
+                  {getWeatherIcon(output.weather)}
+                  {Math.round(output.weather.celsiusTemp)}°C
                 </div>
               )}
 
