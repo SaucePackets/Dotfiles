@@ -26,8 +26,8 @@
     }
   },
   "bar_configurations": [
-    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.1.json",
-    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.2.json"
+    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.json",
+    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.extra.json"
   ],
   "monitors": [
     {

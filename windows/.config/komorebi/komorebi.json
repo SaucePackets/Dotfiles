@@ -3,6 +3,7 @@
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
+  "cross_boundary_behaviour": "Workspace",
   "default_workspace_padding": 10,
   "default_container_padding": 10,
   "border": true,
@@ -26,7 +27,7 @@
     }
   },
   "bar_configurations": [
-    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.1.json"
+    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.json"
   ],
   "monitors": [
     {

@@ -6,12 +6,12 @@ update_space() {
     case $SPACE_ID in
     1)
         ICON=
-        ICON_PADDING_LEFT=7
-        ICON_PADDING_RIGHT=7
+        ICON_PADDING_LEFT=10
+        ICON_PADDING_RIGHT=10
         ;;
     *)
         ICON=$SPACE_ID
-        ICON_PADDING_LEFT=9
+        ICON_PADDING_LEFT=10
         ICON_PADDING_RIGHT=10
         ;;
     esac
