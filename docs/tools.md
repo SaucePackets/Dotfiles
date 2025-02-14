@@ -7,11 +7,15 @@
 
 - Windows Manager:
   - Aerospace
+    - Sketchybar(View Workspaces)
+
+- Font
+  * JetBrains Mono
+  * JetBrainsMono Nerd Font
 
 - Tools:
   * homebrew
   * pip
-  * JetBrains Mono
   * qemu (Is an option for running a vm locally)
   * tmux
   * neovim
@@ -23,6 +27,7 @@
   * yazi
   * zoxide
   - lazygit
+  - nvm
 
 - Docker:
   * docker
@@ -34,14 +39,20 @@
 ## Windows
 
 - Package Managers:
-  - Scoop
+  - Scoop (Preferred since doesn't need admin privileges)
   - Winget
   - Choclatey
 
+- Font
+  * JetBrains Mono
+  * JetBrainsMono Nerd Font
+
 - Window Manager:
-  - GlazeWM
+  - Komorebi (Currently Using)
+  - GlazeWM (Not Using)
 
 - Terminal:
+  - Wezterm (Preferred)
   - Windows Terminal
 
 - Ensure Installed:
@@ -53,11 +64,12 @@
 
 - Tools:
   - PowerToys
+  - nvm-windows
   - WSL2
   - PWSH
   - Yazi
   - Starship
-  - Neovim
-  - Zoxide
+  - Neovim (LazyVim Distro)
+  - zoxide
   - lazygit
   - fzf
