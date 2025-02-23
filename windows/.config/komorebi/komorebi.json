@@ -3,15 +3,20 @@
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "cross_boundary_behaviour": "Workspace",
+  "cross_boundary_behaviour": "Monitor",
   "default_workspace_padding": 10,
   "default_container_padding": 10,
   "border": true,
   "border_width": 8,
   "border_offset": -1,
   "animation": {
-    "style": "EaseOutExpo",
-    "enabled": true
+    "enabled": true,
+    "duration": 400,
+    "fps": 120,
+    "style": {
+      "movement": "EaseOutQuart", 
+      "transparency": "Linear"
+    }
   },
   "theme": {
     "palette": "Base16",
@@ -34,42 +39,31 @@
       "workspaces": [
         {
           "name": "1",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         },
         {
           "name": "2",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         },
         {
           "name": "3",
-          "workspace_rules": [
-            {
-              "kind": "Exe",
-              "id": "OUTLOOK.EXE",
-              "matching_strategy": "Equals"
-            },
-            {
-              "kind": "Class",
-              "id": "Qt5152QWindowIcon",
-              "matching_strategy": "Equals"
-            }
-          ]
+          "layout": "BSP"
         },
         {
           "name": "4",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         },
         {
           "name": "5",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         },
         {
           "name": "6",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         },
         {
           "name": "7",
-          "layout": "UltrawideVerticalStack"
+          "layout": "BSP"
         }
       ]
     }

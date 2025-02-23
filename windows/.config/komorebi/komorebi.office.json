@@ -1,0 +1,80 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.33/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
+  "border": true,
+  "border_width": 8,
+  "border_offset": -1,
+  "animation": {
+    "style": "EaseOutExpo",
+    "enabled": true
+  },
+  "theme": {
+    "palette": "Base16",
+    "name": "CatppuccinMocha",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  "stackbar": {
+    "height": 40,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300
+    }
+  },
+  "bar_configurations": [
+    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.json",
+    "$Env:KOMOREBI_CONFIG_HOME/komorebi.bar.extra.json"
+  ],
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "BSP"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "UiPath.Studio.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "UiPath.Studio.Project.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "UiExplorer.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Class",
+      "id": "Qt5152QWindowIcon",
+      "matching_strategy": "Equals"
+    }
+  ]
+}
