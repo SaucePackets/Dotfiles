@@ -6,10 +6,17 @@ return {
       build = "make",
     },
     "nvim-telescope/telescope-file-browser.nvim",
+    "nvim-lua/plenary.nvim",
+    "debugloop/telescope-undo.nvim",
   },
   keys = {
     {
-      "sf",
+      "<leader>uu",
+      "<cmd>Telescope undo<cr>",
+      desc = "Undo Tree"
+    },
+    {
+      "<leader>sf",
       function()
         local telescope = require("telescope")
 
@@ -28,7 +35,7 @@ return {
           layout_config = { height = 40 },
         })
       end,
-      desc = "Open File Browser with the path of the current buffer",
+      desc = "Open File Browser",
     },
   },
   config = function(_, opts)
@@ -60,6 +67,18 @@ return {
       },
     }
     opts.extensions = {
+      undo = {
+        i = {
+          ["<cr>"] = require("telescope-undo.actions").yank_additions,
+          ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+          ["<C-cr>"] = require("telescope-undo.actions").restore,
+        },
+        n = {
+          ["y"] = require("telescope-undo.actions").yank_additions,
+          ["Y"] = require("telescope-undo.actions").yank_deletions,
+          ["u"] = require("telescope-undo.actions").restore,
+        },
+      },
       file_browser = {
         theme = "dropdown",
         -- disables netrw and use telescope-file-browser in its place
@@ -92,5 +111,6 @@ return {
     telescope.setup(opts)
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("file_browser")
+    require("telescope").load_extension("undo")
   end,
 }
