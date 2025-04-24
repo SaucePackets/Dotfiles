@@ -69,14 +69,14 @@ return {
     opts.extensions = {
       undo = {
         i = {
-          ["<cr>"] = require("telescope-undo.actions").yank_additions,
-          ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
-          ["<C-cr>"] = require("telescope-undo.actions").restore,
+          ["<C-Y>"] = require("telescope-undo.actions").yank_additions,
+          ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
+          ["<C-r>"] = require("telescope-undo.actions").restore,
         },
         n = {
-          ["y"] = require("telescope-undo.actions").yank_additions,
-          ["Y"] = require("telescope-undo.actions").yank_deletions,
-          ["u"] = require("telescope-undo.actions").restore,
+          ["Y"] = require("telescope-undo.actions").yank_additions,
+          ["y"] = require("telescope-undo.actions").yank_deletions,
+          ["r"] = require("telescope-undo.actions").restore,
         },
       },
       file_browser = {
@@ -85,7 +85,7 @@ return {
         hijack_netrw = true,
         mappings = {
           -- your custom insert mode mappings
-          ["n"] = {
+          n = {
             -- your custom normal mode mappings
             ["N"] = fb_actions.create,
             ["h"] = fb_actions.goto_parent_dir,
