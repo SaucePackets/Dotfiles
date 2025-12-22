@@ -1,22 +1,22 @@
 # Development Environment Setup
 
-This repository is primarily used to track my current configuration. 
+This repository is primarily used to track my current configuration for both my at home setup and work setup since both are in different environments.
+
+- Mac uses custom Neovim config
 
 - Mac:
   - Ghostty
   - Neovim
   - Aerospace
-  - Sketchybar
   - tmux
-  - Wezterm
   - Starship
   - lazygit
 
+- Windows uses the lazyvim distro
+
 - Windows:
-  - Wezterm
   - Neovim
-  - Komorebi (Currently using)
+  - Komorebi
   - whkd
-  - GlazeWM (Not using)
   - Starship
   - lazygit
