@@ -38,3 +38,4 @@ Backup[ ]of[ ]*.numbers/
 
 # Env
 .env
+plugins/

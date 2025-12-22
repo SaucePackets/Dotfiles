@@ -5,6 +5,6 @@ return {
 		cmd = "DB",
 	},
 	{
-		"tpope/vim-dadbod",
+		"tpope/vim-dotenv",
 	},
 }
