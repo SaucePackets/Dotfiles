@@ -2,8 +2,8 @@ return {
 	"akinsho/bufferline.nvim",
 	event = "VeryLazy",
 	keys = {
-		vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {}),
-		vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {}),
+		{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next Tab" },
+		{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev Tab" },
 	},
 	version = "*",
 	dependencies = {
@@ -20,8 +20,8 @@ return {
 	},
 	offsets = {
 		{
-			filetype = "nvim-tree",
-			text = "nvim-tree",
+			filetype = "neo-tree",
+			text = "File Explorer",
 			highlight = "Directory",
 			text_align = "left",
 		},

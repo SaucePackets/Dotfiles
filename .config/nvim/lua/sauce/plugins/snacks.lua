@@ -16,7 +16,15 @@ return {
 		picker = { enabled = false },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		scroll = { enabled = true },
+		scroll = {
+			enabled = true,
+			animate = {
+				duration = { step = 15, total = 150 },
+				easing = "linear",
+			},
+			spamming = 10, -- threshold for spamming detection
+			-- Spamming reduces the duration. See `:h snacks.scroll.Config.spamming`
+		},
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		styles = {

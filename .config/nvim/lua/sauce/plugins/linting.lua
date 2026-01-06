@@ -8,16 +8,10 @@ return {
 	config = function()
 		local lint = require("lint")
 
-		-- -----------------------------
-		-- LINTERS
-		-- -----------------------------
 		lint.linters_by_ft = {
 			python = { "pylint" },
 		}
 
-		-- -----------------------------
-		-- DIAGNOSTIC UI (Noice-friendly)
-		-- -----------------------------
 		vim.diagnostic.config({
 			virtual_text = false, -- important: avoid inline spam
 			signs = true,
@@ -30,9 +24,6 @@ return {
 			},
 		})
 
-		-- -----------------------------
-		-- LINT TRIGGERING
-		-- -----------------------------
 		local lint_augroup = vim.api.nvim_create_augroup("Linting", { clear = true })
 
 		local function try_lint()
@@ -48,9 +39,6 @@ return {
 			desc = "Trigger linting for current file",
 		})
 
-		-- -----------------------------
-		-- AUTO FLOAT DIAGNOSTICS
-		-- -----------------------------
 		vim.api.nvim_create_autocmd("CursorHold", {
 			callback = function()
 				vim.diagnostic.open_float(nil, { focus = false })
