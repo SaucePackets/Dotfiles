@@ -28,11 +28,8 @@ zinit snippet OMZP::command-not-found
 autoload -U compinit && compinit
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
-# Automatically start tmux
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#   tmux attach-session -t default || tmux new-session -s default
-# fi
 
 alias softwareEngineeringVault="cd /Users/jerrykingsbury/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/SoftwareEngineering"
 
