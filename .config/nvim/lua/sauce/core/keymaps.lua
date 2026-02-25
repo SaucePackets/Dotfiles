@@ -25,6 +25,8 @@ keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr =
 
 ----------------------- Window Navigation -------------------
 
+-- NOTE: <C-h/j/k/l> handled by vim-tmux-navigator plugin for seamless tmux integration
+
 -- window management
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
