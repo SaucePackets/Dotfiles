@@ -8,6 +8,7 @@ return {
 	},
 	config = function()
 		require("neo-tree").setup({
+			close_if_last_window = true,
 			event_handlers = {
 				{
 					event = "file_opened",
@@ -17,6 +18,19 @@ return {
 							action = "close",
 						})
 					end,
+				},
+			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = false,
+				},
+				use_libuv_file_watcher = true,
+				filtered_items = {
+					visible = true,
+					hide_dotfiles = false,
+					hide_gitignored = false,
+					hide_hidden = false,
 				},
 			},
 			window = {

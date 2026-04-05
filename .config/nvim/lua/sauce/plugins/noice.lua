@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
+		"ibhagwan/fzf-lua",
 	},
 	config = function()
 		require("noice").setup({
